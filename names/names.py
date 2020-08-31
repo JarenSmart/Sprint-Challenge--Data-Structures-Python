@@ -24,10 +24,13 @@ for name2 in names_2:  # Now it's time to compare for dupes and print dupes to n
     if BSTnames.contains(name2):
         duplicates.append(name2)
 
+# Runtime for improved code is O(n) done twice over
+
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
+# runtime for original is O(n^2) - Quadratic
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

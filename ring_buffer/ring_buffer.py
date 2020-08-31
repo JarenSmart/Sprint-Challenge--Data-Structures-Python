@@ -32,41 +32,5 @@ class RingBuffer:
             self.current = 0  # otherwise reset capacity to 0
 
     def get(self):
-        return self.data
-
-
-# class RingBuffer:
-#     def __init__(self, capacity):
-#         self.capacity = capacity
-#         self.queue = [None]
-#         self.tail = -1
-#         self.head = 0
-#         self.size = 0
-
-#     def append(self, item):
-#         if self.size == self.capacity:
-#             print("Error : Ring is full")
-#         else:
-#             self.tail = (self.tail + 1) % self.capacity
-#             self.queue[self.tail] = item
-#             self.size = self.size + 1
-
-#     def Dequeue(self):
-#         if self.size == 0:
-#             print("The ring is empty")
-#             return
-#         else:
-#             x = self.queue[self.head]
-#             self.head = (self.head + 1) % self.capacity
-#         self.size = self.size - 1
-#         return x
-
-#     def get(self):
-#         if self.size == 0:
-#             print("The ring is empty")
-#         else:
-#             index = self.head
-
-#             for i in range(self.size):
-#                 print(self.queue[index])
-#                 index = (index + 1) % self.capacity
+        # Return raw list instead of placeholder "None" initiated by self.data on line 25
+        return [item for item in self.data if item != None]
